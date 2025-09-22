@@ -1,0 +1,16 @@
+# Entorno virtual de Python
+# Ignora la carpeta completa del entorno virtual para no subir cientos de archivos innecesarios.
+skar_env/
+
+# Base de datos vectorial local
+# Ignora la base de datos de ChromaDB, que se genera localmente y puede ser pesada.
+vectorstores/
+
+# Archivos de caché de Python
+# Ignora las carpetas de caché que Python crea automáticamente.
+__pycache__/
+*.pyc
+
+# Archivos de configuración del editor de código
+# Ignora la carpeta de configuración específica de tu Visual Studio Code.
+.vscode/
