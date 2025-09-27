@@ -14,3 +14,6 @@ __pycache__/
 # Archivos de configuración del editor de código
 # Ignora la carpeta de configuración específica de tu Visual Studio Code.
 .vscode/
+
+#Archivos de secretos y variables de entorno
+.env
