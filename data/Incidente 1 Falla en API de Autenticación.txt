@@ -1,0 +1,25 @@
+API de Autenticación No Responde Generando Errores 503 en Portal Web 
+
+Se detectó una falla total en el servicio de la API de Autenticación (AuthAPI), provocando que los usuarios no puedan iniciar sesión en el Portal Web de Clientes. Se registraron más de 500 errores HTTP 503 por minuto.
+
+Estado: Resuelto
+
+Inicio: 26/09/2025 14:05
+
+Fin: 26/09/2025 14:48
+
+Duración: 43 minutos
+
+Negocio: Banca Minorista
+
+Sistemas afectados: AuthAPI, Portal Web Clientes, Microservicio Usuarios
+
+Impacto: Alto
+
+Ticket: 15510988
+
+Ambiente: Producción
+
+Causa probable: Una actualización reciente en el microservicio de Usuarios (Ticket CH-40512) introdujo un cambio en el formato de respuesta esperado por AuthAPI. AuthAPI no pudo procesar las nuevas respuestas, generando un bucle de errores y agotando los recursos del servidor (CPU al 100% en SRV-AUTH-P01).
+
+Solucion Implementada: Se realizó un rollback de emergencia de la actualización en el microservicio de Usuarios a la versión anterior estable. Inmediatamente después, se reinició el servicio AuthAPI en el servidor SRV-AUTH-P01, lo que restauró la comunicación y normalizó el inicio de sesión en el Portal Web.

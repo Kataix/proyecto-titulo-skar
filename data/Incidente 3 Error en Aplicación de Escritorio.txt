@@ -1,0 +1,25 @@
+Aplicación "GestiónClientes" v1.8 Cierra Inesperadamente con Error "Memory Access Violation" 
+
+Múltiples usuarios de la sucursal Central reportaron cierres inesperados de la aplicación de escritorio "GestiónClientes" al intentar guardar un nuevo contacto. El sistema operativo mostraba un error genérico "Memory Access Violation".
+
+Estado: Resuelto
+
+Inicio: 28/09/2025 16:00
+
+Fin: 28/09/2025 17:30
+
+Duración: 90 minutos
+
+Negocio: Ventas y Atención al Cliente
+
+Sistemas afectados: Aplicación GestiónClientes (v1.8), Windows 10
+
+Impacto: Bajo (afectó a una sucursal)
+
+Ticket: 15511055
+
+Ambiente: Producción
+
+Causa probable: Se identificó que el error ocurría específicamente en máquinas que habían recibido la última actualización de seguridad de Windows (KB50XXXXX) esa misma mañana. Un análisis posterior (Ticket DEV-1298) reveló una incompatibilidad entre una librería gráfica (.dll) utilizada por "GestiónClientes" v1.8 y la nueva versión del sistema operativo, causando una gestión incorrecta de la memoria.
+
+Solucion Implementada: Como medida de contención inmediata, se desinstaló la actualización de Windows KB50XXXXX en las máquinas afectadas, lo que resolvió el cierre inesperado. Paralelamente, el equipo de desarrollo preparó un parche de emergencia para la aplicación "GestiónClientes" (v1.8.1) que actualizaba la librería .dll incompatible. Este parche se distribuyó e instaló posteriormente, permitiendo volver a instalar la actualización de Windows.

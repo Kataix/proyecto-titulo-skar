@@ -1,0 +1,25 @@
+Lentitud Extrema en Módulo de Inventario ERP Impide Carga de Datos 
+
+Usuarios del área de Logística reportaron lentitud excesiva (tiempos de respuesta > 60 segundos) al intentar cargar nuevos registros en el módulo de Inventario del sistema ERP principal. El problema escaló hasta impedir completamente la carga de datos.
+
+Estado: Resuelto
+
+Inicio: 27/09/2025 11:30
+
+Fin: 27/09/2025 12:15
+
+Duración: 45 minutos
+
+Negocio: Logística y Distribución
+
+Sistemas afectados: ERP Central (Módulo Inventario), Base de Datos Oracle (DB-ERP-PROD)
+
+Impacto: Medio
+
+Ticket: 15511012
+
+Ambiente: Producción
+
+Causa probable: El análisis de rendimiento de la base de datos (DB-ERP-PROD) reveló un bloqueo (lock) prolongado en la tabla INV_STOCK_ITEMS. Se identificó que un proceso batch de actualización de precios (JOB_UPDATE_PRICES) ejecutado por Control-M estaba manteniendo el bloqueo por más tiempo del esperado debido a un volumen inusualmente alto de datos.
+
+Solucion Implementada: El equipo de DBA identificó el SPID del proceso batch bloqueante y procedió a terminarlo (kill) de forma controlada. Esto liberó inmediatamente los bloqueos en la tabla INV_STOCK_ITEMS. Se ajustó la programación del JOB_UPDATE_PRICES para ejecutarse en horario de menor concurrencia y se optimizó la consulta SQL del job para reducir su tiempo de ejecución.

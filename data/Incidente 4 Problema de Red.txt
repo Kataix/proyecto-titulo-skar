@@ -1,0 +1,25 @@
+Pérdida de Conectividad Intermitente con Servidor de Archivos FS-CORP-01 
+
+Usuarios de diferentes departamentos reportaron problemas intermitentes para acceder a las carpetas compartidas alojadas en el servidor de archivos FS-CORP-01. Los síntomas incluían timeouts al intentar abrir archivos y errores de "Red no disponible".
+
+Estado: Resuelto
+
+Inicio: 29/09/2025 10:00
+
+Fin: 29/09/2025 10:55
+
+Duración: 55 minutos
+
+Negocio: Operaciones Internas (Varios Deptos.)
+
+Sistemas afectados: Servidor de Archivos FS-CORP-01, Infraestructura de Red (Switch Core SW-CORE-A)
+
+Impacto: Medio
+
+Ticket: 15511103
+
+Ambiente: Producción
+
+Causa probable: El monitoreo de red detectó una alta tasa de pérdida de paquetes (packet loss) específicamente en el puerto del switch SW-CORE-A al que estaba conectado el servidor FS-CORP-01. Una revisión física del cableado reveló que el cable de red del servidor estaba dañado (pellizcado) cerca del conector RJ45, causando una conexión inestable.
+
+Solucion Implementada: El equipo de Redes reemplazó el cable de red defectuoso que conectaba el servidor FS-CORP-01 al switch SW-CORE-A. Tras el reemplazo, las pruebas de conectividad (ping extendido, transferencia de archivos) confirmaron la restauración completa de la comunicación y la desaparición de la pérdida de paquetes. Se notificó a los usuarios la resolución del problema.

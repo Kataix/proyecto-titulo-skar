@@ -1,0 +1,37 @@
+[
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Quién es el responsable de reiniciar un servidor web Apache según el procedimiento?",
+    "respuesta_ideal": "El responsable es el Analista de Operaciones Nivel 1." 
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Qué comando se usa para verificar el estado del servicio Apache?",
+    "respuesta_ideal": "Se utiliza el comando `sudo systemctl status apache2`."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Cuál fue el síntoma reportado en el ticket 12345?",
+    "respuesta_ideal": "Múltiples usuarios reportaron un error 503 Service Unavailable al intentar acceder al portal de clientes."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "Resume los pasos para reiniciar el servidor Apache y qué validación final se debe hacer.",
+    "respuesta_ideal": "Los pasos son: notificar, conectar por SSH, verificar estado, reiniciar (`sudo systemctl restart apache2`), y validar estado final (`sudo systemctl status apache2` debe mostrar 'active (running)')."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "¿Qué relación hay entre el diagnóstico del ticket 12345 y el procedimiento de reinicio del servidor web?",
+    "respuesta_ideal": "El diagnóstico del ticket 12345 (saturación del pool de conexiones a BD) llevó a aplicar la solución de reiniciar el servicio Apache siguiendo el procedimiento estándar."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Cuál es la IP del servidor srv-web-01?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos." 
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Cómo configuro Nginx?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  }
+]
