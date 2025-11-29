@@ -95,7 +95,7 @@ def main():
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     # Guarda los resultados dentro de la carpeta eval
-    output_file = os.path.join(PROJECT_ROOT, "eval", f"resultados_pruebas_iniciales_{timestamp}.csv") 
+    output_file = os.path.join(PROJECT_ROOT, "eval", f"resultados_CON_Reranker_{timestamp}.csv") 
 
     run_test_batch(input_file, output_file)
 

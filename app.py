@@ -7,12 +7,12 @@ from skar_api.pipeline import rag_chain
 # --- Configuración de la Página ---
 st.set_page_config(
     page_title="SKAR - Agente de Conocimiento",
-    page_icon="🤖",
+    page_icon="🐶",
     layout="centered"
 )
 
 # --- Título y Descripción ---
-st.title("🤖 SKAR: Tu Agente de Conocimiento Operativo")
+st.title("🐶 SKAR: Tu Agente de Conocimiento Operativo")
 st.caption("Desarrollado por Samuel Sáez para el Trabajo de Título de Ingeniería Civil Informática.")
 
 # --- Inicialización del Historial de Chat ---

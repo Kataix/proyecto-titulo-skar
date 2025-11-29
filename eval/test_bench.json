@@ -2,7 +2,7 @@
   {
     "categoria": "Hechos Conocidos",
     "pregunta": "¿Quién es el responsable de reiniciar un servidor web Apache según el procedimiento?",
-    "respuesta_ideal": "El responsable es el Analista de Operaciones Nivel 1." 
+    "respuesta_ideal": "El responsable es el Analista de Operaciones Nivel 1."
   },
   {
     "categoria": "Hechos Conocidos",
@@ -15,23 +15,238 @@
     "respuesta_ideal": "Múltiples usuarios reportaron un error 503 Service Unavailable al intentar acceder al portal de clientes."
   },
   {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Cuál fue la solución implementada para el incidente de API de Autenticación (Ticket 15510988)?",
+    "respuesta_ideal": "Se realizó un rollback de emergencia de la actualización en el microservicio de Usuarios a la versión anterior estable y se reinició el servicio AuthAPI."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Qué sistema operativo tiene el servidor DB-ERP-PROD?",
+    "respuesta_ideal": "El servidor DB-ERP-PROD tiene como sistema operativo Oracle Linux."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Cuál es la IP del servidor SRV-AUTH-P01?",
+    "respuesta_ideal": "La IP del servidor SRV-AUTH-P01 es 192.168.1.15."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Qué causó la lentitud en el Sistema ERP (Ticket 15511012)?",
+    "respuesta_ideal": "La causa fue un bloqueo prolongado en la tabla INV_STOCK_ITEMS de la base de datos, provocado por un proceso batch (JOB_UPDATE_PRICES)."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Qué versión de la aplicación GestiónClientes presentó el error en el ticket 15511055?",
+    "respuesta_ideal": "La versión de la aplicación GestiónClientes que presentó el error fue la v1.8."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Cuál fue la causa del problema de red en el ticket 15511103?",
+    "respuesta_ideal": "La causa fue un cable de red dañado (pellizcado) que conectaba el servidor FS-CORP-01 al switch SW-CORE-A."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Qué error específico se menciona en el artículo kb_error_ax7.md?",
+    "respuesta_ideal": "El artículo menciona el error AX7-001 en la aplicación LogiApp v2.5."
+  },
+  {
     "categoria": "Síntesis",
     "pregunta": "Resume los pasos para reiniciar el servidor Apache y qué validación final se debe hacer.",
-    "respuesta_ideal": "Los pasos son: notificar, conectar por SSH, verificar estado, reiniciar (`sudo systemctl restart apache2`), y validar estado final (`sudo systemctl status apache2` debe mostrar 'active (running)')."
+    "respuesta_ideal": "Los pasos son: notificar al equipo en Slack, conectar por SSH, verificar estado actual (`sudo systemctl status apache2`), reiniciar el servicio (`sudo systemctl restart apache2`), y validar nuevamente el estado (`sudo systemctl status apache2`) para asegurar que esté activo y corriendo ('active (running)')."
   },
   {
     "categoria": "Síntesis",
     "pregunta": "¿Qué relación hay entre el diagnóstico del ticket 12345 y el procedimiento de reinicio del servidor web?",
-    "respuesta_ideal": "El diagnóstico del ticket 12345 (saturación del pool de conexiones a BD) llevó a aplicar la solución de reiniciar el servicio Apache siguiendo el procedimiento estándar."
+    "respuesta_ideal": "El diagnóstico del ticket 12345 (saturación del pool de conexiones a BD que causó Error 503) llevó a aplicar la solución de reiniciar el servicio Apache en srv-web-01 siguiendo el procedimiento estándar."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "Compara el impacto y los sistemas afectados en los incidentes 15510988 (API Auth) y 15511055 (GestiónClientes).",
+    "respuesta_ideal": "El incidente 15510988 tuvo impacto Alto y afectó a AuthAPI, Portal Web Clientes y Microservicio Usuarios. El incidente 15511055 tuvo impacto Bajo y afectó a la aplicación GestiónClientes y Windows 10 en una sucursal."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "¿Qué servidores mencionados en el inventario están ubicados en el Data Center A?",
+    "respuesta_ideal": "Los servidores ubicados en el Data Center A son SRV-WEB-P01, SRV-AUTH-P01, FS-CORP-01 y OLD-APP-P01."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "Describe brevemente el problema y la solución del incidente relacionado con el servidor FS-CORP-01.",
+    "respuesta_ideal": "El problema fue una pérdida de conectividad intermitente con el servidor FS-CORP-01 debido a un cable de red dañado. La solución fue reemplazar dicho cable defectuoso."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "¿Qué incidentes reportados fueron resueltos mediante un reinicio o rollback?",
+    "respuesta_ideal": "El incidente del ticket 12345 (Error 503) se resolvió con un reinicio del servicio Apache. El incidente de API de Autenticación (Ticket 15510988) se resolvió con un rollback de una actualización y un reinicio del servicio AuthAPI."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "Lista los servidores que utilizan Ubuntu Linux según el inventario.",
+    "respuesta_ideal": "Los servidores que utilizan Ubuntu Linux son SRV-WEB-P01 (versión 22.04 LTS) y SRV-WEB-S01 (versión 20.04 LTS)."
   },
   {
     "categoria": "Fuera de Alcance",
     "pregunta": "¿Cuál es la IP del servidor srv-web-01?",
-    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos." 
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
   },
   {
     "categoria": "Fuera de Alcance",
     "pregunta": "¿Cómo configuro Nginx?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Cuál es el procedimiento para desplegar una nueva aplicación en Kubernetes?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Qué marca de switches usamos en el Data Center B?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Quién es el gerente de operaciones de TI?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Cuánta RAM tiene el servidor SRV-DB-MASTER?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "Dame una receta para hacer pastel de chocolate.",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Qué pasó en el ticket 99999999?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Qué base de datos se menciona en el procedimiento de backup manual?",
+    "respuesta_ideal": "La base de datos mencionada es clientes_main."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Cuál es el script para el backup de PostgreSQL?",
+    "respuesta_ideal": "pg_dump -U postgres -W -F t clientes_main > clientes_main_backup_2025-09-22.sql.tar"
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Cuál es la solución para el error 'Acceso denegado' en el módulo de Finanzas del ERP?",
+    "respuesta_ideal": "Pasos para la Solución: Abrir la consola de Usuarios y equipos de Active Directory.Buscar al usuario afectado. Hacer clic derecho sobre el usuario y seleccionar Propiedades.Ir a la pestaña Miembro de. Verificar si el grupo GRP-ERP-FINANZAS está en la lista. Si no está, hacer clic en Agregar..., escribir el nombre del grupo y aceptarlo. Pedir al usuario que cierre sesión en su equipo y vuelva a iniciarla para que los cambios de permisos se apliquen."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Qué función tiene el servidor VMS-BC-P043?",
+    "respuesta_ideal": "La función principal es Host Virtualización."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Cuál es el modelo de hardware del servidor DB-ERP-PROD?",
+    "respuesta_ideal": "El modelo de hardware es Oracle Exadata."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Qué servidor está en estado 'Decomm.'?",
+    "respuesta_ideal": "El servidor OLD-APP-P01 está en estado Decomm."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Cuál era el Ticket de la actualización de Usuarios que causó la falla de AuthAPI?",
+    "respuesta_ideal": "El ticket de la actualización fue CH-40512."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Qué proceso batch específico causó el bloqueo en la base de datos ERP?",
+    "respuesta_ideal": "El proceso batch fue JOB_UPDATE_PRICES."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿Qué actualización de Windows causó el problema en GestiónClientes (Ticket 15511055)?",
+    "respuesta_ideal": "La actualización de seguridad de Windows KB50XXXXX."
+  },
+  {
+    "categoria": "Hechos Conocidos",
+    "pregunta": "¿A qué switch estaba conectado el servidor FS-CORP-01?",
+    "respuesta_ideal": "Estaba conectado al switch SW-CORE-A."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "Lista todos los servidores que corren Windows Server según el inventario.",
+    "respuesta_ideal": "Los servidores que corren Windows Server son SRV-AUTH-P01, FS-CORP-01 y OLD-APP-P01."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "¿El servidor FS-CORP-01, que tuvo el problema de red, qué Sistema Operativo tiene?",
+    "respuesta_ideal": "El servidor FS-CORP-01 tiene como sistema operativo Windows Server 2016 Standard."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "¿Cuál es el ticket del incidente que afectó a la aplicación GestiónClientes v1.8?",
+    "respuesta_ideal": "El ticket es el 15511055."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "¿Qué incidente afectó al servidor SRV-AUTH-P01?",
+    "respuesta_ideal": "El incidente de Falla en API de Autenticación (Ticket 15510988)."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "Compara la solución del error AX7-001 y la del ticket 15511055.",
+    "respuesta_ideal": "La solución para el error AX7-001 fue eliminar el archivo cache.dat. La solución para el ticket 15511055 fue desinstalar una actualización de Windows y parchar una librería .dll incompatible."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "¿Cuántos servidores están en el Data Center B según el inventario?",
+    "respuesta_ideal": "Hay tres servidores en el Data Center B: DB-ERP-PROD, VMS-BC-P043, y DB-CLI-P02."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "¿Qué se debe hacer antes de ejecutar el reinicio de Apache, según el procedimiento?",
+    "respuesta_ideal": "Se debe notificar al equipo en el canal de Slack #operaciones."
+  },
+  {
+    "categoria": "Síntesis",
+    "pregunta": "¿Qué dos tickets mencionan un impacto 'Medio'?",
+    "respuesta_ideal": "El ticket 15511012 (Lentitud ERP) y el ticket 15511103 (Problema de Red)."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Cuál es la IP del servidor de DNS primario?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Quién es el CEO de la empresa?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Cuál es el procedimiento para solicitar vacaciones?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Cuál es la mejor práctica para la seguridad de contraseñas?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Qué pasó en el ticket 15510900?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "¿Qué servidores son marca IBM?",
+    "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
+  },
+  {
+    "categoria": "Fuera de Alcance",
+    "pregunta": "Escribe un script en Python para conectarse a una base de datos.",
     "respuesta_ideal": "No tengo información sobre ese tema en mi base de conocimientos."
   }
 ]

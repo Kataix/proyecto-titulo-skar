@@ -1,0 +1,9 @@
+# Ignorar la carpeta del entorno virtual (Docker instalará sus propias librerías)
+skar_env/
+venv/
+.env
+__pycache__/
+.git/
+.gitignore
+# Ignorar la base de datos vectorial si quieres que se cree de cero (opcional)
+# vectorstores/
